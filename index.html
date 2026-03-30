@@ -1,46 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Can Ersoy</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Can Ersoy | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange: #FF7215;
+            --teal: #0A6E82;
+            --mustard: #C3870F;
+            --bg-dark: #1A1A1A;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: var(--bg-dark); 
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; 
+            height: 100vh;
+        }
+
+        /* 1. Arka Plan Renk Blokları (En alt katman) */
+        .background-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: flex;
+            z-index: 1;
+        }
+        .left-bg { width: 45%; background: var(--teal); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .right-bg { width: 55%; background: var(--mustard); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        /* 2. Dev İsim Yazısı (Orta Katman) */
+        .hero-text {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            z-index: 2; /* Görselin arkasında kalması için */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18vw;
+            line-height: 0.8;
+            color: var(--orange);
+            pointer-events: none; /* Mouse'un görseli algılamasını engellemez */
+        }
+
+        /* 3. Etkileşimli Görsel Alanı (En üst katman) */
+        .main-stage {
+            position: relative;
+            z-index: 10;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 8%;
+        }
+
+        .image-wrapper {
+            width: 45vw;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            /* Figma'daki o derinlik hissi için gölge */
+            filter: drop-shadow(30px 30px 60px rgba(0,0,0,0.4));
+        }
+
+        /* Alt Yazılar */
+        .footer-text {
+            position: absolute;
+            bottom: 40px;
+            left: 5%;
+            z-index: 20;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Hover Durumları */
+        .purenest-active .left-bg { background: #F7CAC9; } /* Purenest Pembesi */
+        .purenest-active .right-bg { background: #E0E7E9; }
+
+    </style>
 </head>
 <body>
-    <div class="background-shapes">
-        <div id="shape-left" class="shape"></div>
-        <div id="shape-right" class="shape"></div>
+
+    <div class="background-container" id="bgContainer">
+        <div class="left-bg"></div>
+        <div class="right-bg"></div>
     </div>
 
-    <main>
-        <div class="project-list">
-            <div class="project-item" data-image="herceptin.webp" data-color1="#0A6E82" data-color2="#C3870F">
-                <span class="number">01</span>
-                <span class="title">Herceptin</span>
-            </div>
-            <div class="project-item" data-image="purenest.webp" data-color1="#F7CAC9" data-color2="#E0E7E9">
-                <span class="number">02</span>
-                <span class="title">Purenest</span>
-            </div>
-            <div class="project-item" data-image="erkosan-image.webp" data-color1="#FF7215" data-color2="#333">
-                <span class="number">03</span>
-                <span class="title">erkosan</span>
-            </div>
-        </div>
+    <div class="hero-text">
+        CAN<br>ERSOY
+    </div>
 
-        <div class="display-area">
-            <img id="main-display-image" src="herceptin.webp" alt="Project Preview">
-            <div class="main-name">
-                <h1>Can <br> Ersoy</h1>
-            </div>
+    <main class="main-stage">
+        <div class="image-wrapper" id="mainTrigger">
+            <img src="herceptin.webp" id="displayImg" alt="Portfolio Project">
         </div>
-
-        <footer>
-            <p>Berlin based Art director & Brand designer [cite: 52]</p>
-            <div class="social">in</div>
-        </footer>
     </main>
 
-    <script src="script.js"></script>
+    <div class="footer-text">
+        Berlin based Art director & Brand designer
+    </div>
+
+    <script>
+        const trigger = document.getElementById('mainTrigger');
+        const img = document.getElementById('displayImg');
+        const body = document.body;
+
+        // Hover Efekti
+        trigger.addEventListener('mouseenter', () => {
+            img.src = 'purenest.webp';
+            body.classList.add('purenest-active');
+            trigger.style.transform = 'scale(1.05) rotate(2deg)';
+        });
+
+        trigger.addEventListener('mouseleave', () => {
+            img.src = 'herceptin.webp';
+            body.classList.remove('purenest-active');
+            trigger.style.transform = 'scale(1) rotate(0deg)';
+        });
+    </script>
 </body>
 </html>
