@@ -1,48 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Can Ersoy</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can Ersoy | Landing Page</title>
+    <style>
+        /* Base Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1A1A1A;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fallback for Gilroy */
+            overflow-x: hidden;
+        }
+
+        .container {
+            position: relative;
+            max-width: 1440px;
+            height: 100vh;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        /* Color Blocks */
+        .teal-block {
+            position: absolute;
+            width: 25%;
+            height: 50%;
+            left: 40%;
+            top: 20px;
+            background: #0A6E82;
+            z-index: 1;
+        }
+
+        .mustard-block {
+            position: absolute;
+            width: 35%;
+            height: 50%;
+            right: 0;
+            top: 20px;
+            background: #C3870F;
+            z-index: 1;
+        }
+
+        /* Typography */
+        .name-wrapper {
+            z-index: 10;
+            line-height: 0.8;
+            pointer-events: none;
+        }
+
+        .first-name, .last-name {
+            display: block;
+            color: #FF7215;
+            font-size: clamp(80px, 15vw, 200px); /* Responsive sizing */
+            font-weight: 900;
+            text-transform: none;
+        }
+
+        /* Image Handling */
+        .hero-image {
+            position: absolute;
+            right: 5%;
+            top: 5%;
+            width: 60%;
+            height: auto;
+            z-index: 5;
+            object-fit: contain;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .teal-block, .mustard-block { width: 40%; }
+            .hero-image { width: 90%; top: 10%; }
+        }
+    </style>
 </head>
 <body>
 
-<h1 class="title">CAN ERSOY</h1>
+    <div class="container">
+        <div class="teal-block"></div>
+        <div class="mustard-block"></div>
+        
+        <img src="your-image-link.png" alt="Herceptin" class="hero-image">
 
-<!-- PROJECTS -->
-<div class="projects">
-  <div class="project" style="background-image:url('images/Artboard-10.jpg')"></div>
-  <div class="project" style="background-image:url('images/cover.jpg')"></div>
-</div>
-
-<!-- OVERLAY -->
-<div class="overlay" id="overlay">
-  <div class="overlay-content" id="overlayContent"></div>
-</div>
-
-<!-- ABOUT -->
-<section class="about">
-  <h2>About Me</h2>
-  <p>
-    Brand Marketing Designer & Art Director focused on branding, visual systems and creative direction.
-  </p>
-</section>
-
-<!-- CONTACT -->
-<section class="contact">
-  <h2>Contact</h2>
-  <p>ahmetcanersoy@gmail.com</p>
-  <div class="socials">
-    <a href="https://www.linkedin.com/in/canersoy-design" target="_blank">
-      <img src="icon/Asset 1.svg" alt="LinkedIn" style="width: 30px;"> </a>
-    <a href="https://www.instagram.com/a.canersoyy" target="_blank">
-      <img src="icon/Asset 2.svg" alt="Instagram" style="width: 30px;">
-    </a>
-  </div>
-</section>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="script.js"></script>
+        <div class="name-wrapper">
+            <span class="first-name">Can</span>
+            <span class="last-name">Ersoy</span>
+        </div>
+    </div>
 
 </body>
 </html>
