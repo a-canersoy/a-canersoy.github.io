@@ -1,90 +1,82 @@
-/* Layout & Reset */
+/* style.css */
 :root {
-    --bg-color: #1A1A1A;
+    --bg-dark: #1A1A1A;
     --accent-orange: #FF7215;
     --teal: #0A6E82;
     --mustard: #C3870F;
 }
 
-body {
+body, html {
     margin: 0;
-    background-color: var(--bg-color);
-    color: white;
-    font-family: 'Gilroy', sans-serif; /* Ensure you host the font or use a similar one like 'Inter' */
+    padding: 0;
+    background-color: var(--bg-dark);
+    font-family: 'Helvetica Neue', sans-serif; /* Fallback for Gilroy */
     overflow-x: hidden;
 }
 
-.hero-section {
+.hero {
     position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: flex-end;
-    padding: 5vw;
-    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Background Shapes */
+/* Responsive Background Boxes */
 .shape {
     position: absolute;
     z-index: 1;
-    transition: transform 0.1s ease-out; /* For JS parallax */
 }
 
-.teal-rect {
-    width: 335px;
-    height: 485px;
-    left: 38%;
+.teal-box {
+    width: 25vw;
+    height: 50vh;
+    left: 40%;
     top: 5%;
     background: var(--teal);
 }
 
-.mustard-rect {
-    width: 512px;
-    height: 485px;
+.mustard-box {
+    width: 35vw;
+    height: 50vh;
     right: 0;
     top: 10%;
     background: var(--mustard);
 }
 
-/* Hero Image */
-.product-image {
-    position: absolute;
-    right: 10%;
-    top: 15%;
-    width: 50%;
-    max-width: 800px;
-    z-index: 5;
+.container {
+    width: 90%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 10;
+}
+
+.brand-text h1 {
+    margin: 0;
+    color: var(--accent-orange);
+    font-size: clamp(80px, 15vw, 200px);
+    font-weight: 900;
+    line-height: 0.85;
+    text-transform: none;
+}
+
+.image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image {
+    width: 60%;
+    height: auto;
     filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
 }
 
-/* Typography */
-.name-container {
-    position: relative;
-    z-index: 10;
-    text-transform: none;
-    line-height: 0.85;
-}
-
-.name-line {
-    display: block;
-    font-size: clamp(5rem, 15vw, 12rem);
-    font-weight: 800;
-    color: var(--accent-orange);
-    /* Initial state for JS animation */
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-/* Responsive Fixes */
+/* Mobile Fix */
 @media (max-width: 768px) {
-    .product-image {
-        width: 80%;
-        top: 20%;
-        right: 5%;
-    }
-    .teal-rect, .mustard-rect {
-        width: 40%;
-        height: 30%;
-    }
+    .container { flex-direction: column; align-items: flex-start; }
+    .hero-image { width: 100%; margin-top: 50px; }
 }
