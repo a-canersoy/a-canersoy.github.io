@@ -1,71 +1,90 @@
+/* Layout & Reset */
+:root {
+    --bg-color: #1A1A1A;
+    --accent-orange: #FF7215;
+    --teal: #0A6E82;
+    --mustard: #C3870F;
+}
+
 body {
-  margin: 0;
-  background: black;
-  color: white;
-  font-family: Arial, sans-serif;
-  overflow-x: hidden; /* Prevents accidental horizontal scrolling */
+    margin: 0;
+    background-color: var(--bg-color);
+    color: white;
+    font-family: 'Gilroy', sans-serif; /* Ensure you host the font or use a similar one like 'Inter' */
+    overflow-x: hidden;
 }
 
-/* HERO */
-.title {
-  /* clamp(min, preferred, max) - keeps it responsive but sane */
-  font-size: clamp(2rem, 8vw, 6rem); 
-  padding: 40px;
-  line-height: 1.1;
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 5vw;
+    box-sizing: border-box;
 }
 
-/* PROJECT GRID */
-.projects {
-  display: grid;
-  /* Defaults to 1 column for mobile, shifts to 2 for desktop */
-  grid-template-columns: 1fr;
+/* Background Shapes */
+.shape {
+    position: absolute;
+    z-index: 1;
+    transition: transform 0.1s ease-out; /* For JS parallax */
 }
 
-@media (min-width: 768px) {
-  .projects {
-    grid-template-columns: 1fr 1fr;
-  }
+.teal-rect {
+    width: 335px;
+    height: 485px;
+    left: 38%;
+    top: 5%;
+    background: var(--teal);
 }
 
-.project {
-  height: 60vh;
-  background-size: cover;
-  background-position: center;
-  background-color: #1a1a1a; /* Fallback so you can see the grid while loading */
-  cursor: pointer;
-  position: relative; /* Essential if you put text inside the project div */
+.mustard-rect {
+    width: 512px;
+    height: 485px;
+    right: 0;
+    top: 10%;
+    background: var(--mustard);
 }
 
-/* Overlay nesnesinin kendisi başlangıçta şeffaf olmalı */
-#overlayContent {
-  position: absolute;
-  background-size: cover;
-  background-position: center;
-  z-index: 1000;
-  pointer-events: none; /* Tıklamayı engellemesin ki mouseleave çalışsın */
+/* Hero Image */
+.product-image {
+    position: absolute;
+    right: 10%;
+    top: 15%;
+    width: 50%;
+    max-width: 800px;
+    z-index: 5;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
 }
 
-.overlay {
-  z-index: 999;
-  background: rgba(0,0,0,0); /* Başlangıçta arka plan şeffaf */
-  transition: background 0.5s;
+/* Typography */
+.name-container {
+    position: relative;
+    z-index: 10;
+    text-transform: none;
+    line-height: 0.85;
 }
 
-/* ABOUT & CONTACT */
-.about, .contact {
-  padding: 100px 40px;
-  max-width: 800px; /* Slightly wider for better readability */
-  line-height: 1.6; /* Standard for comfortable reading */
+.name-line {
+    display: block;
+    font-size: clamp(5rem, 15vw, 12rem);
+    font-weight: 800;
+    color: var(--accent-orange);
+    /* Initial state for JS animation */
+    opacity: 0;
+    transform: translateY(30px);
 }
 
-.socials a {
-  margin-right: 20px;
-  color: white;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s;
-}
-
-.socials a:hover {
-  border-bottom: 1px solid white; /* Adds a nice hover effect */
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .product-image {
+        width: 80%;
+        top: 20%;
+        right: 5%;
+    }
+    .teal-rect, .mustard-rect {
+        width: 40%;
+        height: 30%;
+    }
 }
