@@ -36,15 +36,19 @@ body {
   position: relative; /* Essential if you put text inside the project div */
 }
 
-/* OVERLAY - Added 'visibility' check */
+/* Overlay nesnesinin kendisi başlangıçta şeffaf olmalı */
+#overlayContent {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  z-index: 1000;
+  pointer-events: none; /* Tıklamayı engellemesin ki mouseleave çalışsın */
+}
+
 .overlay {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
   z-index: 999;
-  display: flex; /* Helps centering content if needed */
-  align-items: center;
-  justify-content: center;
+  background: rgba(0,0,0,0); /* Başlangıçta arka plan şeffaf */
+  transition: background 0.5s;
 }
 
 /* ABOUT & CONTACT */
