@@ -1,99 +1,87 @@
 * {
     margin: 0;
     padding: 0;
-    box-box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #f4f4f4;
-    overflow-x: hidden;
-}
-
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background: transparent;
-    position: absolute;
-    width: 100%;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-.auth-buttons button {
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: 1px solid #333;
-    cursor: pointer;
-    background: transparent;
-}
-
-.btn-signup {
-    background-color: #f7cac9 !important; /* Görseldeki pembe tonu */
-    border: none !important;
-}
-
-/* Hero Section */
-.hero {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    padding-left: 10%;
-    background: #e0e7e9; /* Arka plan rengi */
-}
-
-.hero h1 {
-    font-size: 3rem;
-    color: #2c3e50;
-}
-
-/* Expanding Cards Container */
-.campaign-container {
-    display: flex;
-    width: 90vw;
-    margin: 50px auto;
-    height: 500px;
-}
-
-.card {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-    border-radius: 20px;
-    margin: 10px;
-    flex: 0.5; /* Başlangıç genişliği */
-    position: relative;
-    transition: flex 0.7s ease-in-out;
-    cursor: pointer;
+    background-color: #1A1A1A;
+    color: #FF7215; /* İsim rengi */
+    font-family: 'Gilroy', sans-serif; /* Font yüklü değilse Arial'e döner */
+    height: 100vh;
     overflow: hidden;
 }
 
-.card.active, .card:hover {
-    flex: 5; /* Genişleyen kartın oranı */
+.main-container {
+    position: relative;
+    width: 1440px; /* Standart Figma genişliği */
+    height: 1024px;
+    margin: 0 auto;
 }
 
-.card-content {
+/* Renk Blokları */
+.shape {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    transition: all 0.5s ease;
+}
+
+.teal {
+    width: 335px;
+    height: 485px;
+    left: 553px;
+    top: 20px;
+    background: #0A6E82;
+    z-index: 1;
+}
+
+.mustard {
+    width: 512px;
+    height: 485px;
+    left: 908px;
+    top: 20px;
+    background: #C3870F;
+    z-index: 1;
+}
+
+/* Tipografi */
+.name-container {
+    position: absolute;
+    left: 40px;
+    top: 500px;
+    z-index: 5;
+}
+
+.name-container h1 {
+    font-size: 200px;
+    line-height: 0.85;
+    text-transform: none;
+    font-weight: 900;
+}
+
+/* Görsel Alanı */
+.image-wrapper {
+    position: absolute;
+    left: 725px;
+    top: 15px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.image-wrapper img {
+    width: 880px;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+/* Hover Durumu: Görsel hafif büyüsün */
+.image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+.footer-info {
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
     color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
+    font-size: 24px;
 }
-
-.card.active .card-content, .card:hover .card-content {
-    opacity: 1;
-}
-
-.card h2 { font-size: 2rem; }
