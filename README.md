@@ -73,6 +73,5 @@ Instagram: (https://www.instagram.com/a.canersoyy?igsh=cWFidG1wc2FtbWRl&utm_sour
 
 ©
 
-All works and content belong to A. Can Ersoy.
 
-All works and content belong to **Can Ersoy**.
+All works and content belong to **Ahmet Can Ersoy**.
