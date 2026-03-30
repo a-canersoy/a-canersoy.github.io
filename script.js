@@ -1,67 +1,24 @@
-const projects = document.querySelectorAll(".project");
-const overlay = document.getElementById("overlay");
-const overlayContent = document.getElementById("overlayContent");
+document.addEventListener('DOMContentLoaded', () => {
+    const lines = document.querySelectorAll('.name-line');
+    const teal = document.querySelector('.teal-rect');
+    const mustard = document.querySelector('.mustard-rect');
 
-let isAnimating = false;
-let activeProject = null;
-
-projects.forEach(project => {
-  project.addEventListener("mouseenter", () => {
-    if (isAnimating) return;
-
-    isAnimating = true;
-    activeProject = project;
-
-    // Görseli alırken url() kısmını doğru temizleyelim
-    const bgImg = getComputedStyle(project).backgroundImage;
-    overlayContent.style.backgroundImage = bgImg;
-
-    const rect = project.getBoundingClientRect();
-
-    // Başlangıç pozisyonunu ayarla
-    gsap.set(overlayContent, {
-      x: rect.left,
-      y: rect.top,
-      width: rect.width,
-      height: rect.height,
-      opacity: 1 // Görünür yap
+    // 1. Simple Entrance Animation
+    lines.forEach((line, index) => {
+        setTimeout(() => {
+            line.style.transition = "all 0.8s ease-out";
+            line.style.opacity = "1";
+            line.style.transform = "translateY(0)";
+        }, 200 * index);
     });
 
-    overlay.style.pointerEvents = "auto";
+    // 2. Subtle Mouse Parallax Effect
+    document.addEventListener('mousemove', (e) => {
+        let moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+        let moveY = (e.clientY - window.innerHeight / 2) * 0.01;
 
-    gsap.to(overlayContent, {
-      x: 0,
-      y: 0,
-      width: "100vw", // window.innerWidth yerine string kullanmak daha güvenli
-      height: "100vh",
-      duration: 0.7,
-      ease: "power3.inOut",
-      onComplete: () => {
-        isAnimating = false;
-      }
+        // Move the shapes in opposite directions for depth
+        teal.style.transform = `translate(${moveX * -1}px, ${moveY * -1}px)`;
+        mustard.style.transform = `translate(${moveX * 1.5}px, ${moveY * 1.5}px)`;
     });
-  });
-});
-
-// Küçülme efekti
-overlay.addEventListener("mouseleave", () => {
-  if (isAnimating || !activeProject) return;
-
-  isAnimating = true;
-  const rect = activeProject.getBoundingClientRect();
-
-  gsap.to(overlayContent, {
-    x: rect.left,
-    y: rect.top,
-    width: rect.width,
-    height: rect.height,
-    duration: 0.6,
-    ease: "power3.inOut",
-    onComplete: () => {
-      overlay.style.pointerEvents = "none";
-      gsap.set(overlayContent, { opacity: 0 }); // Küçülünce gizle
-      activeProject = null;
-      isAnimating = false;
-    }
-  });
 });
