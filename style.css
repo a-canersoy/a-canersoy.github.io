@@ -1,130 +1,262 @@
-.desktop {
-  background-color: #ffffff;
-  width: 100%;
-  min-width: 1440px;
-  min-height: 1024px;
+.background,
+.desktop-1 {
   position: relative;
+  background-color: var(--color-gray);
 }
-
-.desktop .background {
-  position: absolute;
-  top: 0;
-  left: 0;
+.desktop-1 {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: var(--padding-20) var(--padding-20) 19px;
+  box-sizing: border-box;
+  gap: 11px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.background {
   width: 1440px;
   height: 1024px;
-  background-color: #1a1a1a;
+  display: none;
+  max-width: 100%;
+  flex-shrink: 0;
 }
-
-.desktop .rectangle {
-  position: absolute;
-  top: 20px;
-  left: 553px;
-  width: 335px;
+.purenest-parent {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: var(--padding-0) var(--padding-0) 9px;
+  box-sizing: border-box;
+  gap: var(--gap-20);
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.frame-child,
+.purenest-icon {
   height: 485px;
-  background-color: #0a6e82;
+  position: relative;
+  max-width: 100%;
+  z-index: 1;
 }
-
-.desktop .name {
-  position: absolute;
-  top: 541px;
-  left: 38px;
-  width: 475px;
-  height: 423px;
-}
-
-.desktop .can {
-  position: absolute;
-  top: 0;
-  left: 6px;
-  font-family: "Gilroy-Bold-Regular", Helvetica;
-  font-weight: 400;
-  color: #ff7214;
-  font-size: 200px;
-  line-height: normal;
-}
-
-.desktop .text-wrapper {
-  letter-spacing: -8.00px;
-}
-
-.desktop .span {
-  letter-spacing: -20.00px;
-}
-
-.desktop .text-wrapper-2 {
-  letter-spacing: 0;
-}
-
-.desktop .ersoy {
-  position: absolute;
-  top: 175px;
-  left: 0;
-  font-family: "Gilroy-Bold-Regular", Helvetica;
-  font-weight: 400;
-  color: #ff7214;
-  font-size: 200px;
-  line-height: normal;
-}
-
-.desktop .text-wrapper-3 {
-  letter-spacing: -4.00px;
-}
-
-.desktop .text-wrapper-4 {
-  letter-spacing: -16.00px;
-}
-
-.desktop .herceptin {
-  position: absolute;
-  top: 20px;
-  left: 908px;
-  width: 512px;
-  height: 485px;
-}
-
-.desktop .purenest {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 513px;
-  height: 485px;
-}
-
-.desktop .erkosan {
-  position: absolute;
-  top: 525px;
-  left: 553px;
-  width: 512px;
-  height: 430px;
-}
-
-.desktop .contact {
-  position: absolute;
-  top: 976px;
-  left: 1188px;
-  width: 210px;
-  height: 28px;
-}
-
-.desktop .berlin-based-art {
-  position: absolute;
-  top: 975px;
-  left: 49px;
-  font-family: "Gilroy-Regular-☞", Helvetica;
-  font-weight: 400;
-  color: #d9d9d9;
-  font-size: 25px;
-  letter-spacing: -0.50px;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.desktop .profile-photo {
-  position: absolute;
-  top: 525px;
-  left: 1085px;
-  width: 335px;
-  height: 430px;
-  aspect-ratio: 0.78;
+.purenest-icon {
+  flex: 1;
+  overflow: hidden;
   object-fit: cover;
+  min-width: 333px;
+}
+.frame-child {
+  width: 335px;
+  background-color: var(--color-teal);
+}
+.frame-parent {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-20);
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.frame-wrapper {
+  flex-direction: column;
+  padding: 16px 24px var(--padding-0) var(--padding-0);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 200px;
+  color: var(--color-darkorange);
+  font-family: var(--font-gilroy-bold);
+}
+.can-wrapper,
+.frame-group,
+.frame-wrapper {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.frame-group {
+  align-self: stretch;
+  flex-direction: column;
+}
+.can-wrapper {
+  width: 383px;
+  padding: var(--padding-0) 6px;
+  box-sizing: border-box;
+}
+.can {
+  margin: 0;
+  height: 248px;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  display: inline-block;
+  flex-shrink: 0;
+  max-width: 100%;
+  z-index: 1;
+}
+.c {
+  letter-spacing: -0.02em;
+}
+.a {
+  letter-spacing: -0.05em;
+}
+.ersoy-wrapper {
+  align-self: stretch;
+  height: 175px;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-0) var(--padding-0);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.ersoy {
+  margin: 0;
+  height: 248px;
+  width: 471px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  display: inline-block;
+  flex-shrink: 0;
+  max-width: 100%;
+  z-index: 1;
+}
+.s {
+  letter-spacing: -0.01em;
+}
+.o {
+  letter-spacing: -0.04em;
+}
+.erkosan-icon,
+.profile-photo-1-icon {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  z-index: 1;
+}
+.erkosan-icon {
+  height: 430px;
+  flex: 1;
+  overflow: hidden;
+  min-width: 333px;
+}
+.profile-photo-1-icon {
+  width: 335px;
+  max-height: 100%;
+}
+.linkedin-parent {
+  width: 1371px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  isolation: isolate;
+  max-width: 100%;
+  flex-shrink: 0;
+  text-align: left;
+  font-size: 25px;
+  color: var(--color-gainsboro);
+  font-family: var(--font-gilroy-regular);
+}
+.linkedin-icon {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  height: 27px;
+  width: 27px;
+  position: absolute;
+  margin: 0 !important;
+  top: 1px;
+  right: 22px;
+  z-index: 1;
+}
+.frame-container {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.berlin-based-art-director-br-parent {
+  width: 1261px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 681px;
+  max-width: 100%;
+}
+.berlin-based-art {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  font-family: inherit;
+  display: inline-block;
+  min-width: 298px;
+  z-index: 1;
+}
+.frame-div,
+.mailto-parent {
+  display: flex;
+  align-items: flex-start;
+}
+.frame-div {
+  width: 122px;
+  flex-direction: column;
+  padding: 1px var(--padding-0) var(--padding-0);
+  box-sizing: border-box;
+}
+.mailto-parent {
+  align-self: stretch;
+  justify-content: space-between;
+  gap: var(--gap-20);
+}
+.insta-icon,
+.mailto-icon {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  height: 27px;
+  width: 39px;
+  position: relative;
+  z-index: 1;
+}
+.insta-icon {
+  width: 27px;
+}
+@media screen and (max-width: 1200px) {
+  .berlin-based-art-director-br-parent {
+    gap: 340px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .can,
+  .ersoy {
+    font-size: var(--fs-80);
+  }
+}
+@media screen and (max-width: 750px) {
+  .berlin-based-art-director-br-parent {
+    gap: 170px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .can,
+  .ersoy {
+    font-size: 50px;
+  }
+  .berlin-based-art-director-br-parent {
+    gap: 85px;
+  }
+  .berlin-based-art {
+    font-size: 20px;
+  }
 }
