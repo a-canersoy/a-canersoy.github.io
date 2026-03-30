@@ -1,33 +1,45 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Can Ersoy | Portfolio</title>
+    <title>Can Ersoy</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="background-shapes">
+        <div id="shape-left" class="shape"></div>
+        <div id="shape-right" class="shape"></div>
+    </div>
 
-    <div class="main-container">
-        <div id="shape-teal" class="shape teal"></div>
-        <div id="shape-mustard" class="shape mustard"></div>
-
-        <div class="name-container">
-            <h1 class="first-name">Can</h1>
-            <h1 class="last-name">Ersoy</h1>
-        </div>
-
-        <div class="image-wrapper" id="project-trigger">
-            <img src="herceptin.webp" alt="Project" id="main-image">
-        </div>
-
-        <div class="footer-info">
-            <p>Berlin based Art director & Brand designer</p>
-            <div class="social-icons">
-                <a href="#">in</a>
+    <main>
+        <div class="project-list">
+            <div class="project-item" data-image="herceptin.webp" data-color1="#0A6E82" data-color2="#C3870F">
+                <span class="number">01</span>
+                <span class="title">Herceptin</span>
+            </div>
+            <div class="project-item" data-image="purenest.webp" data-color1="#F7CAC9" data-color2="#E0E7E9">
+                <span class="number">02</span>
+                <span class="title">Purenest</span>
+            </div>
+            <div class="project-item" data-image="erkosan-image.webp" data-color1="#FF7215" data-color2="#333">
+                <span class="number">03</span>
+                <span class="title">erkosan</span>
             </div>
         </div>
-    </div>
+
+        <div class="display-area">
+            <img id="main-display-image" src="herceptin.webp" alt="Project Preview">
+            <div class="main-name">
+                <h1>Can <br> Ersoy</h1>
+            </div>
+        </div>
+
+        <footer>
+            <p>Berlin based Art director & Brand designer [cite: 52]</p>
+            <div class="social">in</div>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
