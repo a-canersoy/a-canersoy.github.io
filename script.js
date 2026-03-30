@@ -1,25 +1,16 @@
-const projectItems = document.querySelectorAll('.project-item');
-const mainImage = document.getElementById('main-display-image');
-const shapeLeft = document.getElementById('shape-left');
-const shapeRight = document.getElementById('shape-right');
+const triggers = document.querySelectorAll('.trigger');
+const mainImg = document.getElementById('featured-img');
+const b1 = document.getElementById('block1');
+const b2 = document.getElementById('block2');
 
-projectItems.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        // Verileri al
-        const newImg = item.getAttribute('data-image');
-        const color1 = item.getAttribute('data-color1');
-        const color2 = item.getAttribute('data-color2');
+triggers.forEach(t => {
+    t.addEventListener('mouseenter', () => {
+        const newImg = t.getAttribute('data-img');
+        const c1 = t.getAttribute('data-c1');
+        const c2 = t.getAttribute('data-c2');
 
-        // Değişimleri uygula
-        mainImage.src = newImg;
-        shapeLeft.style.background = color1;
-        shapeRight.style.background = color2;
-        
-        // Görsel efekti
-        mainImage.style.transform = 'scale(1.05) rotate(1deg)';
-    });
-
-    item.addEventListener('mouseleave', () => {
-        mainImage.style.transform = 'scale(1) rotate(0deg)';
+        mainImg.src = newImg;
+        b1.style.background = c1;
+        b2.style.background = c2;
     });
 });
