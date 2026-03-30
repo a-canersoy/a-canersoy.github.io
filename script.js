@@ -1,24 +1,25 @@
+// script.js
 document.addEventListener('DOMContentLoaded', () => {
-    const lines = document.querySelectorAll('.name-line');
-    const teal = document.querySelector('.teal-rect');
-    const mustard = document.querySelector('.mustard-rect');
-
-    // 1. Simple Entrance Animation
-    lines.forEach((line, index) => {
+    const textLines = document.querySelectorAll('.reveal-text');
+    
+    // Animate the text sliding up
+    textLines.forEach((line, index) => {
+        line.style.opacity = "0";
+        line.style.transform = "translateY(50px)";
+        line.style.transition = "all 0.8s ease-out";
+        
         setTimeout(() => {
-            line.style.transition = "all 0.8s ease-out";
             line.style.opacity = "1";
             line.style.transform = "translateY(0)";
-        }, 200 * index);
+        }, 200 * (index + 1));
     });
 
-    // 2. Subtle Mouse Parallax Effect
+    // Subtle parallax for the background boxes
     document.addEventListener('mousemove', (e) => {
-        let moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-        let moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-
-        // Move the shapes in opposite directions for depth
-        teal.style.transform = `translate(${moveX * -1}px, ${moveY * -1}px)`;
-        mustard.style.transform = `translate(${moveX * 1.5}px, ${moveY * 1.5}px)`;
+        const x = (window.innerWidth - e.pageX * 2) / 100;
+        const y = (window.innerHeight - e.pageY * 2) / 100;
+        
+        document.querySelector('.teal-box').style.transform = `translateX(${x}px) translateY(${y}px)`;
+        document.querySelector('.mustard-box').style.transform = `translateX(${-x}px) translateY(${-y}px)`;
     });
 });
