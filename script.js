@@ -1,21 +1,25 @@
-const projectTrigger = document.getElementById('project-trigger');
-const mainImage = document.getElementById('main-image');
-const tealBox = document.getElementById('shape-teal');
-const mustardBox = document.getElementById('shape-mustard');
+const projectItems = document.querySelectorAll('.project-item');
+const mainImage = document.getElementById('main-display-image');
+const shapeLeft = document.getElementById('shape-left');
+const shapeRight = document.getElementById('shape-right');
 
-// Hover Başladığında
-projectTrigger.addEventListener('mouseenter', () => {
-    // Yeni görsele geçiş (Örn: Purenest)
-    mainImage.src = 'purenest.webp'; 
-    
-    // Renkleri değiştir
-    tealBox.style.background = '#F7CAC9'; // Purenest pembesi
-    mustardBox.style.background = '#E0E7E9';
-});
+projectItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        // Verileri al
+        const newImg = item.getAttribute('data-image');
+        const color1 = item.getAttribute('data-color1');
+        const color2 = item.getAttribute('data-color2');
 
-// Hover Bittiğinde (Orijinal Haline Dönüş)
-projectTrigger.addEventListener('mouseleave', () => {
-    mainImage.src = 'herceptin.webp';
-    tealBox.style.background = '#0A6E82';
-    mustardBox.style.background = '#C3870F';
+        // Değişimleri uygula
+        mainImage.src = newImg;
+        shapeLeft.style.background = color1;
+        shapeRight.style.background = color2;
+        
+        // Görsel efekti
+        mainImage.style.transform = 'scale(1.05) rotate(1deg)';
+    });
+
+    item.addEventListener('mouseleave', () => {
+        mainImage.style.transform = 'scale(1) rotate(0deg)';
+    });
 });
