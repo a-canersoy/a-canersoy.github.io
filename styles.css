@@ -1,0 +1,561 @@
+@import url("https://fonts.cdnfonts.com/css/gilroy-bold");
+
+:root {
+  --frame-width: 1440;
+  --frame-height: 1024;
+  --smart-animate-duration: 800ms;
+  --smart-animate-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  font-family: "Gilroy-Regular", "Gilroy", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.viewport {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage {
+  position: relative;
+}
+
+.frame {
+  width: calc(var(--frame-width) * 1px);
+  height: calc(var(--frame-height) * 1px);
+  position: relative;
+  background: #1a1a1a;
+  transform-origin: top left;
+  transform: scale(var(--scale, 1));
+}
+
+.card {
+  position: absolute;
+  overflow: hidden;
+  z-index: 2;
+  transition:
+    left var(--smart-animate-duration) var(--smart-animate-ease),
+    top var(--smart-animate-duration) var(--smart-animate-ease),
+    width var(--smart-animate-duration) var(--smart-animate-ease),
+    height var(--smart-animate-duration) var(--smart-animate-ease);
+}
+
+.card-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.card img {
+  position: absolute;
+  object-fit: cover;
+  transition:
+    left var(--smart-animate-duration) var(--smart-animate-ease),
+    top var(--smart-animate-duration) var(--smart-animate-ease),
+    width var(--smart-animate-duration) var(--smart-animate-ease),
+    height var(--smart-animate-duration) var(--smart-animate-ease);
+}
+
+.purenest {
+  left: 20px;
+  top: 20px;
+  width: 513px;
+  height: 485px;
+}
+
+.purenest .card-bg {
+  background: #101780;
+}
+
+.purenest img {
+  left: -267.03px;
+  top: -4.95px;
+  width: 879.35px;
+  height: 494.73px;
+}
+
+.plain-card {
+  position: absolute;
+  left: 553px;
+  top: 20px;
+  width: 335px;
+  height: 485px;
+  background: #0a6e82;
+  transition:
+    left var(--smart-animate-duration) var(--smart-animate-ease),
+    top var(--smart-animate-duration) var(--smart-animate-ease),
+    width var(--smart-animate-duration) var(--smart-animate-ease),
+    height var(--smart-animate-duration) var(--smart-animate-ease);
+}
+
+.herceptin {
+  left: 908px;
+  top: 20px;
+  width: 512px;
+  height: 485px;
+}
+
+.herceptin .card-bg {
+  background: #c3870f;
+}
+
+.herceptin img {
+  left: -183.02px;
+  top: -4.95px;
+  width: 879.82px;
+  height: 495.02px;
+}
+
+.name-block {
+  position: absolute;
+  left: 38px;
+  top: 541px;
+  width: 560px;
+  height: 423px;
+}
+
+.name-set {
+  position: absolute;
+  inset: 0;
+  color: #ff7215;
+  transition: opacity var(--smart-animate-duration) var(--smart-animate-ease);
+}
+
+.name-block h1 {
+  margin: 0;
+  position: absolute;
+  font-family: "Gilroy-Bold", "Gilroy", "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 200px;
+  line-height: 1.2380000305;
+  letter-spacing: 0;
+}
+
+.name-block h1:first-child {
+  left: 6px;
+  top: 0;
+}
+
+.name-block h1:last-child {
+  left: 0;
+  top: 175px;
+}
+
+.name-can-ersoy {
+  opacity: 1;
+}
+
+.name-about-me {
+  opacity: 0;
+}
+
+.name-about-me h1:first-child {
+  left: 6px;
+  width: 554px;
+  letter-spacing: -0.02em;
+}
+
+.name-about-me h1:last-child {
+  width: 276px;
+  letter-spacing: -0.02em;
+}
+
+.erkosan {
+  left: 641px;
+  top: 525px;
+  width: 424px;
+  height: 430px;
+}
+
+.erkosan .card-bg {
+  background: #571313;
+}
+
+.erkosan img {
+  left: -151.74px;
+  top: 6.47px;
+  width: 759.03px;
+  height: 414.01px;
+}
+
+.profile-photo {
+  position: absolute;
+  left: 1085px;
+  top: 524px;
+  width: 335px;
+  height: 430px;
+  object-fit: cover;
+  z-index: 2;
+  transition:
+    left var(--smart-animate-duration) var(--smart-animate-ease),
+    top var(--smart-animate-duration) var(--smart-animate-ease),
+    width var(--smart-animate-duration) var(--smart-animate-ease),
+    height var(--smart-animate-duration) var(--smart-animate-ease);
+}
+
+.tagline {
+  position: absolute;
+  left: 50px;
+  top: 975px;
+  width: 458px;
+  height: 30px;
+  margin: 0;
+  font-family: "Gilroy-Regular", "Gilroy", "Avenir Next", "Segoe UI", sans-serif;
+  color: #d9d9d9;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  z-index: 4;
+}
+
+.contact {
+  position: absolute;
+  left: 1189px;
+  top: 976px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 59px;
+  z-index: 4;
+}
+
+.name-block {
+  z-index: 3;
+}
+
+.plain-card {
+  z-index: 1;
+}
+
+.frame:has(.purenest:hover) .purenest,
+.frame:has(.herceptin:hover) .herceptin,
+.frame:has(.erkosan:hover) .erkosan,
+.frame:has(.profile-photo:hover) .profile-photo {
+  z-index: 5;
+}
+
+.contact a {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.contact a:first-child img {
+  width: 39px;
+  height: 27px;
+}
+
+.contact a:not(:first-child) img {
+  width: 27px;
+  height: 27px;
+}
+
+.frame:has(.purenest:hover) .purenest {
+  width: 866px;
+  height: 769px;
+}
+
+.frame:has(.purenest:hover) .purenest img {
+  left: -427.87px;
+  top: -20.33px;
+  width: 1438.65px;
+  height: 809.4px;
+}
+
+.frame:has(.purenest:hover) .plain-card {
+  left: 908px;
+  top: 525px;
+  width: 157px;
+  height: 430px;
+}
+
+.frame:has(.purenest:hover) .herceptin {
+  left: 908px;
+  top: 20px;
+  width: 512px;
+  height: 492.2px;
+}
+
+.frame:has(.purenest:hover) .herceptin img {
+  left: -186.27px;
+  top: -3.18px;
+  width: 886.33px;
+  height: 498.68px;
+}
+
+.frame:has(.purenest:hover) .name-block {
+  left: 16px;
+  top: 766px;
+  width: 870px;
+  height: 248px;
+}
+
+.frame:has(.purenest:hover) .name-block .name-can-ersoy h1:last-child {
+  left: 399px;
+  top: 0;
+}
+
+.frame:has(.purenest:hover) .erkosan {
+  left: 908px;
+  top: 525px;
+  width: 157px;
+  height: 430px;
+}
+
+.frame:has(.purenest:hover) .erkosan img {
+  left: -307px;
+  top: 0;
+  width: 783px;
+  height: 427px;
+}
+
+.frame:has(.herceptin:hover) .herceptin {
+  left: 730px;
+  width: 690px;
+  height: 715px;
+}
+
+.frame:has(.herceptin:hover) .herceptin img {
+  left: -273.86px;
+  top: 8.72px;
+  width: 1240.13px;
+  height: 697.74px;
+}
+
+.frame:has(.herceptin:hover) .plain-card {
+  left: 553px;
+  top: 20px;
+  width: 157px;
+  height: 715px;
+}
+
+.frame:has(.herceptin:hover) .erkosan {
+  left: 553px;
+  top: 755px;
+  width: 512px;
+  height: 200px;
+}
+
+.frame:has(.herceptin:hover) .erkosan img {
+  left: -9.38px;
+  top: -55.85px;
+  width: 568.84px;
+  height: 310.28px;
+}
+
+.frame:has(.herceptin:hover) .profile-photo {
+  left: 1085px;
+  top: 755px;
+  width: 335px;
+  height: 200px;
+}
+
+.frame:has(.erkosan:hover) .erkosan {
+  left: 553px;
+  top: 388px;
+  width: 867px;
+  height: 567px;
+}
+
+.frame:has(.erkosan:hover) .erkosan img {
+  left: -157.43px;
+  top: -58.42px;
+  width: 1246.35px;
+  height: 679.83px;
+}
+
+.frame:has(.erkosan:hover) .plain-card {
+  left: 553px;
+  top: 20px;
+  width: 335px;
+  height: 353px;
+}
+
+.frame:has(.erkosan:hover) .herceptin {
+  left: 908px;
+  top: 20px;
+  width: 512px;
+  height: 353.43px;
+}
+
+.frame:has(.erkosan:hover) .herceptin img {
+  left: -118.64px;
+  top: -34.53px;
+  width: 751.06px;
+  height: 422.57px;
+}
+
+.frame:has(.profile-photo:hover) .name-block .name-can-ersoy {
+  opacity: 0;
+}
+
+.frame:has(.profile-photo:hover) .name-block .name-about-me {
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .viewport {
+    display: block;
+    min-height: 100vh;
+    padding: 24px 16px;
+  }
+
+  .stage {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .frame,
+  .frame.is-responsive {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    transform: none !important;
+    transform-origin: top left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .card,
+  .plain-card,
+  .name-block,
+  .profile-photo,
+  .tagline,
+  .contact {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+  }
+
+  .card,
+  .plain-card,
+  .profile-photo {
+    height: 230px !important;
+  }
+
+  .purenest img,
+  .herceptin img,
+  .erkosan img {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  .plain-card {
+    display: none;
+  }
+
+  .name-block {
+    grid-column: span 2;
+    height: auto !important;
+    min-height: 140px;
+  }
+
+  .name-set h1 {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    margin: 0;
+    font-size: clamp(56px, 12vw, 120px);
+    line-height: 0.95;
+  }
+
+  .name-can-ersoy h1:last-child,
+  .name-about-me h1:last-child {
+    margin-top: 4px;
+  }
+
+  .profile-photo {
+    grid-column: span 2;
+    height: min(64vw, 360px) !important;
+  }
+
+  .tagline {
+    grid-column: span 2;
+    height: auto !important;
+    font-size: clamp(16px, 2.2vw, 22px);
+    line-height: 1.25;
+    margin-top: 4px;
+  }
+
+  .contact {
+    grid-column: span 2;
+    justify-content: flex-start;
+    gap: 28px;
+    padding-bottom: 6px;
+  }
+
+  .contact a:first-child img {
+    width: 33px;
+    height: 23px;
+  }
+
+  .contact a:not(:first-child) img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .frame:has(.profile-photo:hover) .name-block .name-can-ersoy {
+    opacity: 1;
+  }
+
+  .frame:has(.profile-photo:hover) .name-block .name-about-me {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .viewport {
+    padding: 14px 10px;
+  }
+
+  .frame,
+  .frame.is-responsive {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .name-block,
+  .profile-photo,
+  .tagline,
+  .contact {
+    grid-column: span 1;
+  }
+
+  .card,
+  .profile-photo {
+    height: min(58vw, 280px) !important;
+  }
+
+  .tagline {
+    font-size: 16px;
+    letter-spacing: -0.01em;
+  }
+}
